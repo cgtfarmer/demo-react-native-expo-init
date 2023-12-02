@@ -1,0 +1,27 @@
+version: "3.9"
+
+networks:
+  default:
+    name: ${COMPOSE_PROJECT_NAME}
+
+services:
+  ui:
+    build:
+      dockerfile: Dockerfile
+      context: ./
+      target: demo-react-native-expo-development
+      # args:
+      #   KEY: value
+    user: node
+    working_dir: /home/node/app
+    tty: true
+    # command: "npm run dev"
+    command: "bash"
+    expose:
+      - 3000
+    extra_hosts: # For Linux
+      - host.docker.internal:host-gateway
+    ports:
+      - 19006:19006
+    volumes:
+      - ./:/home/node/app
