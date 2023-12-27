@@ -15,8 +15,7 @@ services:
     user: node
     working_dir: /home/node/app
     tty: true
-    # command: "npm run dev"
-    command: "bash"
+    # command: "npm run web"
     expose:
       - 3000
     extra_hosts: # For Linux

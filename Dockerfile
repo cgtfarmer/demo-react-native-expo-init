@@ -10,3 +10,5 @@ RUN npm install -g npm@10.2.4
 # RUN dpkg -i watchman_$UBUNTU_RELEASE_$VERSION.deb
 
 # RUN sudo apt-get -f install
+
+CMD npm run web
